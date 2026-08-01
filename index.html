@@ -15,7 +15,7 @@
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="Slashbro">
     <meta property="og:title" content="Slashbro · 一刀兄的数字游乐场">
-    <meta property="og:description" content="四个入口，各有各的好玩。浏览 Slashbro 的工具、游戏与创意作品。">
+    <meta property="og:description" content="六个入口，各有各的好玩。浏览 Slashbro 的工具、学习与游戏作品。">
     <meta property="og:url" content="https://slashbro.top/">
     <meta property="og:image" content="https://slashbro.top/og.png">
     <meta property="og:image:width" content="1733">
@@ -23,7 +23,7 @@
     <meta property="og:image:alt" content="Slashbro · 把好用，做成日常。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Slashbro · 一刀兄的数字游乐场">
-    <meta name="twitter:description" content="四个入口，各有各的好玩。">
+    <meta name="twitter:description" content="六个入口，各有各的好玩。">
     <meta name="twitter:image" content="https://slashbro.top/og.png">
   </head>
   <body>
@@ -34,7 +34,7 @@
         </a>
         <a class="project-count" href="#projects">
           <span class="live-dot"></span>
-          <span>04 PROJECTS</span>
+          <span>06 PROJECTS</span>
           <b aria-hidden="true">↓</b>
         </a>
       </header>
@@ -53,7 +53,7 @@
         <div class="hero-mark" aria-hidden="true">
           <div class="mark-orbit orbit-one"></div>
           <div class="mark-orbit orbit-two"></div>
-          <img src="/slashbro-icon.svg" alt="">
+          <img class="hero-logo" src="/slashbro-icon.svg" alt="">
           <p><span>ONE SLASH</span><span>MANY WORLDS</span></p>
         </div>
       </section>
@@ -61,7 +61,7 @@
       <section class="projects" id="projects" aria-label="Slashbro 子网页">
         <div class="section-intro">
           <p class="eyebrow">SELECTED WORKS</p>
-          <h2>四个入口，<br>各有各的好玩。</h2>
+          <h2>六个入口，<br>各有各的好玩。</h2>
           <p>按主题浏览，点击卡片即可前往对应子网页。</p>
         </div>
 
@@ -74,7 +74,7 @@
             </div>
           </header>
 
-          <div class="project-grid">
+          <div class="project-grid project-grid--life">
             <a class="project-card card-menu" href="https://menu.slashbro.top" target="_blank" rel="noreferrer" aria-label="打开菜单">
               <div class="card-meta"><span>DAILY CHOICE</span><span class="card-status"><i></i> LIVE</span></div>
               <div class="visual visual-menu" aria-hidden="true">
@@ -107,12 +107,57 @@
               <p class="card-description">跨越时区安排会议，在同一条时间线上看清每个城市的此刻。</p>
               <span class="card-domain">time.slashbro.top</span>
             </a>
+
+            <a class="project-card card-pallet" href="https://packager.slashbro.top" target="_blank" rel="noreferrer" aria-label="打开打托规划工具">
+              <div class="card-meta"><span>PALLET PLANNER</span><span class="card-status"><i></i> LIVE</span></div>
+              <div class="visual visual-pallet" aria-hidden="true">
+                <span class="tile tile-a"></span>
+                <span class="tile tile-b"></span>
+                <span class="tile tile-c"></span>
+                <span class="tile tile-d"></span>
+                <span class="tile tile-e"></span>
+                <span class="pallet-word">PKG.</span>
+              </div>
+              <div class="card-copy">
+                <div><p>打托规划工具</p><h4>Packager</h4></div>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="card-description">选择产品、数量和托盘规格，自动生成清晰直观的最优打托方案。</p>
+              <span class="card-domain">packager.slashbro.top</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="project-group" aria-labelledby="group-learn">
+          <header class="group-header">
+            <span>02</span>
+            <div>
+              <h3 id="group-learn">学习与成长</h3>
+              <p>Learn &amp; Grow</p>
+            </div>
+          </header>
+
+          <div class="project-grid project-grid--feature">
+            <a class="project-card card-maths" href="https://maths.slashbro.top" target="_blank" rel="noreferrer" aria-label="打开小小口算家">
+              <div class="card-meta"><span>MENTAL MATH</span><span class="card-status"><i></i> LIVE</span></div>
+              <div class="visual visual-maths" aria-hidden="true">
+                <div class="maths-equation"><span>27</span><b>+</b><span>15</span><i>=</i><strong>42</strong></div>
+                <div class="maths-steps"><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="maths-note">每天一点点，计算更准确</span>
+              </div>
+              <div class="card-copy">
+                <div><p>小小口算家</p><h4>Maths</h4></div>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="card-description">用加减、乘除和技巧速算，把每天的小练习变成看得见的进步。</p>
+              <span class="card-domain">maths.slashbro.top</span>
+            </a>
           </div>
         </section>
 
         <section class="project-group" aria-labelledby="group-play">
           <header class="group-header">
-            <span>02</span>
+            <span>03</span>
             <div>
               <h3 id="group-play">灵感与玩乐</h3>
               <p>Create &amp; Play</p>
@@ -135,22 +180,23 @@
               <span class="card-domain">dinosaur-run.slashbro.top</span>
             </a>
 
-            <a class="project-card card-pallet" href="https://packager.slashbro.top" target="_blank" rel="noreferrer" aria-label="打开打托规划工具">
-              <div class="card-meta"><span>PALLET PLANNER</span><span class="card-status"><i></i> LIVE</span></div>
-              <div class="visual visual-pallet" aria-hidden="true">
-                <span class="tile tile-a"></span>
-                <span class="tile tile-b"></span>
-                <span class="tile tile-c"></span>
-                <span class="tile tile-d"></span>
-                <span class="tile tile-e"></span>
-                <span class="pallet-word">PKG.</span>
+            <a class="project-card card-helicopter" href="https://helicopter.slashbro.top" target="_blank" rel="noreferrer" aria-label="打开峡谷直升机">
+              <div class="card-meta"><span>FLIGHT GAME</span><span class="card-status"><i></i> LIVE</span></div>
+              <div class="visual visual-helicopter" aria-hidden="true">
+                <span class="heli-sun"></span>
+                <span class="heli-rotor"></span>
+                <span class="heli-body"><i></i></span>
+                <span class="heli-tail"></span>
+                <span class="canyon canyon-left"></span>
+                <span class="canyon canyon-right"></span>
+                <span class="heli-distance">0000 m</span>
               </div>
               <div class="card-copy">
-                <div><p>打托规划工具</p><h4>Packager</h4></div>
+                <div><p>峡谷直升机</p><h4>Helicopter</h4></div>
                 <span class="card-arrow" aria-hidden="true">↗</span>
               </div>
-              <p class="card-description">选择产品、数量和托盘规格，自动生成清晰直观的最优打托方案。</p>
-              <span class="card-domain">packager.slashbro.top</span>
+              <p class="card-description">轻点空格起飞，在不断收窄的峡谷中稳住高度，飞得更远一点。</p>
+              <span class="card-domain">helicopter.slashbro.top</span>
             </a>
           </div>
         </section>
