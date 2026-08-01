@@ -163,10 +163,12 @@ main {
   isolation: isolate;
 }
 
-.hero-mark img {
+.hero-logo {
   width: min(56%, 310px);
   filter: drop-shadow(0 26px 42px rgba(11, 42, 85, 0.12));
-  animation: slow-turn 28s linear infinite;
+  transform-origin: center;
+  animation: logo-float 5.8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .hero-mark p {
@@ -191,12 +193,14 @@ main {
 .orbit-one {
   width: min(77%, 470px);
   aspect-ratio: 1;
+  animation: orbit-turn 22s linear infinite;
 }
 
 .orbit-two {
   width: min(94%, 580px);
   aspect-ratio: 1;
   border-style: dashed;
+  animation: orbit-turn-reverse 34s linear infinite;
 }
 
 .projects {
@@ -275,6 +279,19 @@ main {
   gap: clamp(18px, 2.4vw, 36px);
 }
 
+.project-grid--life .card-pallet {
+  grid-column: span 2;
+  min-height: 500px;
+}
+
+.project-grid--feature {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.project-grid--feature .project-card {
+  min-height: 500px;
+}
+
 .project-card {
   min-height: 620px;
   position: relative;
@@ -326,6 +343,16 @@ main {
 .card-pallet {
   color: var(--white);
   background: var(--green);
+}
+
+.card-maths {
+  color: var(--ink);
+  background: #d9e6ff;
+}
+
+.card-helicopter {
+  color: var(--white);
+  background: #196178;
 }
 
 .card-meta {
@@ -503,6 +530,143 @@ main {
   gap: 8px;
 }
 
+.visual-maths {
+  display: grid;
+  align-content: center;
+  gap: 22px;
+  padding: 28px;
+  border: 1px solid rgba(11, 42, 85, 0.22);
+  background:
+    linear-gradient(rgba(11, 42, 85, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 42, 85, 0.055) 1px, transparent 1px),
+    rgba(255, 254, 249, 0.5);
+  background-size: 24px 24px;
+}
+
+.maths-equation {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(10px, 2vw, 24px);
+  font: 800 clamp(42px, 6vw, 88px)/0.9 "Arial Narrow", Arial, sans-serif;
+  letter-spacing: -0.08em;
+}
+
+.maths-equation b,
+.maths-equation i {
+  color: var(--coral);
+  font-style: normal;
+}
+
+.maths-equation strong {
+  color: var(--teal);
+}
+
+.maths-steps {
+  display: flex;
+  gap: 10px;
+}
+
+.maths-steps i {
+  width: 16%;
+  height: 8px;
+  background: var(--ink);
+}
+
+.maths-steps i:nth-child(2),
+.maths-steps i:nth-child(4) { background: var(--coral); }
+.maths-steps i:nth-child(3) { background: var(--gold); }
+.maths-steps i:nth-child(5) { background: var(--teal); }
+
+.maths-note {
+  font: 700 11px/1.4 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.12em;
+}
+
+.visual-helicopter {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(180deg, #2a87a0 0%, #196178 64%, #123f54 100%);
+}
+
+.heli-sun {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.92;
+}
+
+.heli-body {
+  position: absolute;
+  z-index: 2;
+  top: 46%;
+  left: 43%;
+  width: 100px;
+  height: 38px;
+  border-radius: 38px 42px 16px 16px;
+  background: var(--coral);
+  transform: rotate(-8deg);
+}
+
+.heli-body i {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  width: 28px;
+  height: 17px;
+  border-radius: 16px 16px 4px 4px;
+  background: #d5f1f0;
+}
+
+.heli-tail {
+  position: absolute;
+  z-index: 1;
+  top: 51%;
+  left: calc(43% - 64px);
+  width: 72px;
+  height: 7px;
+  background: var(--coral);
+  transform: rotate(-8deg);
+}
+
+.heli-rotor {
+  position: absolute;
+  z-index: 3;
+  top: calc(46% - 26px);
+  left: calc(43% + 23px);
+  width: 120px;
+  height: 3px;
+  background: var(--white);
+  transform: rotate(-8deg);
+}
+
+.canyon {
+  position: absolute;
+  bottom: -22px;
+  width: 35%;
+  height: 72%;
+  background: #123f54;
+  clip-path: polygon(0 8%, 100% 0, 72% 100%, 0 100%);
+}
+
+.canyon-left { left: -5%; }
+
+.canyon-right {
+  right: -5%;
+  transform: scaleX(-1);
+}
+
+.heli-distance {
+  position: absolute;
+  z-index: 4;
+  right: 20px;
+  bottom: 16px;
+  font: 700 11px/1 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.14em;
+}
+
 .tile {
   display: block;
   border: 1px solid rgba(255,255,255,0.28);
@@ -564,7 +728,8 @@ main {
 }
 
 .card-time:hover .card-arrow,
-.card-pallet:hover .card-arrow {
+.card-pallet:hover .card-arrow,
+.card-helicopter:hover .card-arrow {
   color: var(--ink);
   background: var(--white);
   border-color: var(--white);
@@ -641,8 +806,17 @@ footer > a {
   border-bottom: 1px solid rgba(255,255,255,0.45);
 }
 
-@keyframes slow-turn {
+@keyframes logo-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+  50% { transform: translate3d(0, -13px, 0) rotate(2deg) scale(1.02); }
+}
+
+@keyframes orbit-turn {
   to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-turn-reverse {
+  to { transform: rotate(-360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -680,6 +854,11 @@ footer > a {
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-grid--life .card-pallet {
+    grid-column: auto;
+    min-height: 590px;
   }
 
   .project-card {
