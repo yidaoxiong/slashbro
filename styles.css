@@ -204,8 +204,15 @@ main {
 }
 
 .projects {
+  display: flex;
+  flex-direction: column;
   padding: clamp(76px, 9vw, 126px) clamp(22px, 4vw, 64px) 120px;
 }
+
+.section-intro { order: 0; }
+.project-group[aria-labelledby="group-learn"] { order: 1; }
+.project-group[aria-labelledby="group-life"] { order: 2; }
+.project-group[aria-labelledby="group-play"] { order: 3; }
 
 .section-intro {
   display: grid;
@@ -348,6 +355,11 @@ main {
 .card-maths {
   color: var(--ink);
   background: #d9e6ff;
+}
+
+.card-verb {
+  color: #133f3e;
+  background: #cde9dd;
 }
 
 .card-helicopter {
@@ -543,6 +555,73 @@ main {
   background-size: 24px 24px;
 }
 
+.visual-verb {
+  display: grid;
+  align-content: center;
+  gap: 26px;
+  padding: 28px;
+  border: 1px solid rgba(19, 63, 62, 0.24);
+  background:
+    radial-gradient(circle at 88% 20%, rgba(226, 160, 33, 0.38) 0 4px, transparent 5px),
+    radial-gradient(circle at 12% 76%, rgba(233, 104, 85, 0.4) 0 3px, transparent 4px),
+    rgba(255, 254, 249, 0.48);
+}
+
+.verb-forms {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.verb-forms span {
+  display: grid;
+  width: min(28%, 148px);
+  min-height: 112px;
+  align-content: space-between;
+  padding: 16px;
+  color: var(--white);
+  background: #246b68;
+  box-shadow: 7px 7px 0 rgba(19, 63, 62, 0.15);
+  font: 700 10px/1.2 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.12em;
+}
+
+.verb-forms span:nth-of-type(2) { background: var(--coral); }
+.verb-forms span:nth-of-type(3) { background: var(--gold); color: #392800; }
+
+.verb-forms b {
+  font: 800 clamp(22px, 3vw, 42px)/1 "Arial Narrow", Arial, sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.verb-forms > i {
+  font-size: clamp(18px, 2vw, 28px);
+  font-style: normal;
+}
+
+.verb-stars {
+  display: flex;
+  gap: 8px;
+}
+
+.verb-stars i {
+  width: 14px;
+  height: 14px;
+  background: var(--teal);
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 92%, 50% 70%, 21% 92%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.verb-stars i:nth-child(2),
+.verb-stars i:nth-child(4) { background: var(--coral); }
+
+.verb-stars i:nth-child(3) { background: var(--gold); }
+
+.verb-note {
+  font: 700 10px/1.3 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.14em;
+}
+
 .maths-equation {
   display: flex;
   align-items: baseline;
@@ -729,7 +808,8 @@ main {
 
 .card-time:hover .card-arrow,
 .card-pallet:hover .card-arrow,
-.card-helicopter:hover .card-arrow {
+.card-helicopter:hover .card-arrow,
+.card-verb:hover .card-arrow {
   color: var(--ink);
   background: var(--white);
   border-color: var(--white);
@@ -898,55 +978,3 @@ footer > a {
   }
 
   .projects {
-    padding-bottom: 70px;
-  }
-
-  .section-intro {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-
-  .section-intro > p:last-child {
-    grid-column: 1;
-    margin: 0;
-  }
-
-  .group-header {
-    grid-template-columns: 62px 1fr;
-  }
-
-  .project-card {
-    min-height: 540px;
-  }
-
-  .visual {
-    height: 230px;
-  }
-
-  .time-line {
-    grid-template-columns: 52px 1fr;
-  }
-
-  .time-line b {
-    font-size: 60px;
-  }
-
-  .card-copy h4 {
-    font-size: 42px;
-  }
-
-  footer {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding-top: 54px;
-    padding-bottom: 54px;
-  }
-
-  footer > p {
-    text-align: left;
-  }
-
-  footer > a {
-    justify-self: start;
-  }
-}
