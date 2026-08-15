@@ -286,7 +286,8 @@ main {
   gap: clamp(18px, 2.4vw, 36px);
 }
 
-.project-grid--life .card-pallet {
+.project-grid--life .card-pallet,
+.project-grid--life .card-slashpack {
   grid-column: span 2;
   min-height: 500px;
 }
@@ -1141,7 +1142,8 @@ footer > a {
     grid-template-columns: 1fr;
   }
 
-  .project-grid--life .card-pallet {
+  .project-grid--life .card-pallet,
+  .project-grid--life .card-slashpack {
     grid-column: auto;
     min-height: 590px;
   }
