@@ -352,6 +352,11 @@ main {
   background: var(--green);
 }
 
+.card-slashpack {
+  color: var(--white);
+  background: #0070d1;
+}
+
 .card-maths {
   color: var(--ink);
   background: #d9e6ff;
@@ -555,6 +560,81 @@ main {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 8px;
+}
+
+.visual-slashpack {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    #0063b7;
+  background-size: 32px 32px;
+}
+
+.slashpack-case {
+  position: relative;
+  display: grid;
+  width: 142px;
+  height: 176px;
+  place-items: center;
+  border: 3px solid var(--white);
+  border-radius: 18px;
+  box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.18);
+}
+
+.case-handle {
+  position: absolute;
+  top: -24px;
+  width: 56px;
+  height: 24px;
+  border: 3px solid var(--white);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.case-slash {
+  position: absolute;
+  width: 4px;
+  height: 116px;
+  background: var(--white);
+  transform: rotate(32deg);
+}
+
+.slashpack-case strong {
+  position: relative;
+  padding: 8px 10px;
+  color: #0070d1;
+  background: var(--white);
+  font: 900 20px/1 Arial, sans-serif;
+  letter-spacing: -0.08em;
+}
+
+.slashpack-route {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 9px/1 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.12em;
+}
+
+.slashpack-route i {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slashpack-label {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font: 700 9px/1 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.16em;
 }
 
 .visual-maths {
@@ -939,6 +1019,7 @@ main {
 
 .card-time:hover .card-arrow,
 .card-pallet:hover .card-arrow,
+.card-slashpack:hover .card-arrow,
 .card-helicopter:hover .card-arrow,
 .card-verb:hover .card-arrow,
 .card-typing:hover .card-arrow {
