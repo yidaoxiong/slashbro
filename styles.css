@@ -287,7 +287,8 @@ main {
 }
 
 .project-grid--life .card-pallet,
-.project-grid--life .card-slashpack {
+.project-grid--life .card-slashpack,
+.project-grid--life .card-wealth {
   grid-column: span 2;
   min-height: 500px;
 }
@@ -376,6 +377,21 @@ main {
 .card-typing {
   color: var(--white);
   background: #253650;
+}
+
+.card-grammar {
+  color: var(--white);
+  background: #5d45a8;
+}
+
+.card-slashword {
+  color: var(--white);
+  background: #7132f5;
+}
+
+.card-wealth {
+  color: #382043;
+  background: #f5cfd9;
 }
 
 .card-design {
@@ -705,6 +721,150 @@ main {
   background: linear-gradient(135deg, rgba(108, 210, 208, 0.18), transparent 55%);
 }
 
+.visual-grammar {
+  display: grid;
+  align-content: center;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(255, 210, 107, 0.55) 0 5px, transparent 6px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 58%);
+}
+
+.grammar-label,
+.slashword-kicker,
+.wealth-note {
+  font: 700 10px/1.2 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.14em;
+}
+
+.grammar-sentence {
+  font: 800 clamp(30px, 4vw, 54px)/1.1 "Arial Narrow", Arial, sans-serif;
+  letter-spacing: -0.045em;
+}
+
+.grammar-sentence b {
+  padding: 0 0.08em 0.06em;
+  color: #302061;
+  background: #ffd26b;
+}
+
+.grammar-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.grammar-options span {
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font: 700 11px/1 "SFMono-Regular", Consolas, monospace;
+}
+
+.grammar-options .is-correct {
+  color: #302061;
+  background: #ffd26b;
+  border-color: #ffd26b;
+}
+
+.visual-slashword {
+  display: grid;
+  align-content: center;
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.075) 1px, transparent 1px),
+    rgba(31, 13, 83, 0.18);
+  background-size: 28px 28px;
+}
+
+.slashword-word {
+  font: 900 clamp(44px, 6.2vw, 88px)/0.92 Arial, sans-serif;
+  letter-spacing: -0.075em;
+}
+
+.slashword-meaning {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.slashword-meaning span {
+  color: #d8ff63;
+  font: 700 11px/1 "SFMono-Regular", Consolas, monospace;
+}
+
+.slashword-meaning b {
+  font-size: 20px;
+}
+
+.slashword-progress {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+  font: 700 10px/1 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.08em;
+}
+
+.slashword-progress i {
+  height: 8px;
+  background: linear-gradient(90deg, #d8ff63 0 60%, rgba(255, 255, 255, 0.2) 60% 100%);
+}
+
+.visual-wealth {
+  display: grid;
+  align-content: center;
+  gap: 26px;
+  padding: 28px;
+  border: 1px solid rgba(56, 32, 67, 0.26);
+  background:
+    radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.76) 0 46px, transparent 47px),
+    rgba(255, 254, 249, 0.38);
+}
+
+.wealth-balance {
+  display: grid;
+  gap: 8px;
+}
+
+.wealth-balance span {
+  font: 700 10px/1 "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.14em;
+}
+
+.wealth-balance strong {
+  font: 900 clamp(48px, 7vw, 96px)/0.9 "Arial Narrow", Arial, sans-serif;
+  letter-spacing: -0.07em;
+}
+
+.wealth-ledger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 700 11px/1 "SFMono-Regular", Consolas, monospace;
+}
+
+.wealth-ledger span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.wealth-ledger i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e96855;
+}
+
+.wealth-ledger span:nth-of-type(2) i { background: #7132f5; }
+.wealth-ledger span:nth-of-type(3) i { background: #1e8c8d; }
+
 .typing-keyboard {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -1023,7 +1183,9 @@ main {
 .card-slashpack:hover .card-arrow,
 .card-helicopter:hover .card-arrow,
 .card-verb:hover .card-arrow,
-.card-typing:hover .card-arrow {
+.card-typing:hover .card-arrow,
+.card-grammar:hover .card-arrow,
+.card-slashword:hover .card-arrow {
   color: var(--ink);
   background: var(--white);
   border-color: var(--white);
@@ -1143,7 +1305,8 @@ footer > a {
   }
 
   .project-grid--life .card-pallet,
-  .project-grid--life .card-slashpack {
+  .project-grid--life .card-slashpack,
+  .project-grid--life .card-wealth {
     grid-column: auto;
     min-height: 590px;
   }
